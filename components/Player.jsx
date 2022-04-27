@@ -6,14 +6,17 @@ class Player extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      player: {},
+      player: { name: "" },
     };
   }
 
   render() {
     return (
       <>
-        <div className={styles.player}></div>
+        <div className={styles.player}>
+          {!this.state.player.name{
+          <input className={styles.input} placeholder="Choose Player"></input>}}
+        </div>
       </>
     );
   }

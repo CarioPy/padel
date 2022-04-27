@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import Link from "next/link";
 import Player from "./Player";
 
-class Statistics extends Component {
+class Match extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -91,4 +91,4 @@ class Statistics extends Component {
   }
 }
 
-export default Statistics;
+export default Match;
