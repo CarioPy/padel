@@ -1,0 +1,13 @@
+.Player {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 100%;
+  border: 10px solid lightgray;
+  background-color: blueviolet;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
