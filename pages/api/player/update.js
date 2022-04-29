@@ -10,10 +10,15 @@ export default async (req, res) => {
       try {
         const player = await Player.findOneAndReplace(
           {
-            name: req.body.name,
+            pid: req.body.pid,
           },
 
-          { name: req.body.name, score: req.body.score, email: req.body.email }
+          {
+            pid: req.body.pid,
+            name: req.body.name,
+            score: req.body.score,
+            email: req.body.email,
+          }
         );
         res.status(200).json({ success: true, data: player });
       } catch (error) {

@@ -13,7 +13,7 @@ export default async (req, res) => {
         res.status(200).json({ success: true, data: match });
       } catch (error) {
         res.status(400).json({ success: false });
-        console.log("problem");
+        console.log("problem", error);
       }
       break;
 
@@ -23,7 +23,8 @@ export default async (req, res) => {
         res.status(200).json({ success: true, data: match });
       } catch (error) {
         res.status(400).json({ success: false });
-        console.log("problem");
+        console.log(req.body);
+        console.log("problem", error);
       }
       break;
     default:

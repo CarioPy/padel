@@ -16,7 +16,6 @@ class Player extends Component {
   };
 
   research = async (e) => {
-    console.log(this.state.research);
     try {
       let players = await fetch("http://localhost:3000/api/player/find", {
         method: "POST",
@@ -28,10 +27,12 @@ class Player extends Component {
           name: this.state.research,
         }),
       });
+
       let new_player = await players.json();
 
       if (new_player.data) {
         this.setState({ player: new_player.data });
+        this.props.parentCallBack(new_player.data);
       }
     } catch (error) {
       console.log(error);
@@ -61,4 +62,5 @@ class Player extends Component {
     );
   }
 }
+
 export default Player;
