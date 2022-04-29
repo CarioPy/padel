@@ -1,7 +1,5 @@
 import styles from "../styles/Match.module.css";
-import Image from "next/image";
 import React, { Component } from "react";
-import Link from "next/link";
 import Player from "./Player";
 
 class Match extends Component {
@@ -54,20 +52,26 @@ class Match extends Component {
             <div className={styles.LinePlayerContainer}>
               <div className={styles.PlayerContainer}>
                 <div className={styles.Player}>
-                  <Player />
+                  <Player func={this.pull_data} />
                 </div>
               </div>
               <div className={styles.PlayerContainer}>
-                <div className={styles.Player}>Choose Player</div>
+                <div className={styles.Player}>
+                  <Player />
+                </div>
               </div>
             </div>
 
             <div className={styles.LinePlayerContainer}>
               <div className={styles.PlayerContainer}>
-                <div className={styles.Player}>Choose Player</div>
+                <div className={styles.Player}>
+                  <Player />
+                </div>
               </div>
               <div className={styles.PlayerContainer}>
-                <div className={styles.Player}>Choose Player</div>
+                <div className={styles.Player}>
+                  <Player />
+                </div>
               </div>
             </div>
           </div>
