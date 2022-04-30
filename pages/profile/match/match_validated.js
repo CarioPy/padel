@@ -28,7 +28,7 @@ export default function MatchPage() {
             <SideNavBar />
             <h1>Validated</h1>
             <Link href="/profile/match">
-              <button>New match</button>
+              <button>New matches</button>
             </Link>
           </div>
         </>
