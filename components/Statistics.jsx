@@ -61,37 +61,6 @@ class Statistics extends Component {
       router.push("/");
     }
   };
-  raiseScore = async () => {
-    await fetch("http://localhost:3000/api/player/update", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        pid: this.state.playerInfo.pid,
-        name: this.state.playerInfo.name,
-        score: this.state.playerInfo.score + 1,
-        email: this.state.playerInfo.email,
-      }),
-    });
-  };
-
-  decreaseScore = async () => {
-    await fetch("http://localhost:3000/api/player/update", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        pid: this.state.playerInfo.pid,
-        name: this.state.playerInfo.name,
-        score: this.state.playerInfo.score - 1,
-        email: this.state.playerInfo.email,
-      }),
-    });
-  };
 
   render() {
     this.getOrCreatePlayer();
@@ -115,8 +84,6 @@ class Statistics extends Component {
               </div>
             </Link>
           </div>
-          <button onClick={this.raiseScore}>Score +1</button>
-          <button onClick={this.decreaseScore}>Score -1</button>
         </div>
       </>
     );
