@@ -87,7 +87,7 @@ class Match extends Component {
     const score_team_A = this.state.TeamA_score;
     const score_team_B = this.state.TeamB_score;
 
-    await fetch("http://localhost:3000/api/match", {
+    await fetch("/api/match", {
       method: "POST",
       headers: {
         Accept: "application/json",
