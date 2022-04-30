@@ -18,7 +18,7 @@ class Match extends Component {
   }
 
   raisePlayerScore = async (player) => {
-    await fetch("http://localhost:3000/api/player/update", {
+    await fetch("/api/player/update", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -34,7 +34,7 @@ class Match extends Component {
   };
 
   decreasePlayerScore = async (player) => {
-    await fetch("http://localhost:3000/api/player/update", {
+    await fetch("/api/player/update", {
       method: "POST",
       headers: {
         Accept: "application/json",

@@ -18,7 +18,7 @@ class Statistics extends Component {
     const router = Router;
     if (this.state.playerInfo) {
       try {
-        let player = await fetch("http://localhost:3000/api/player/find", {
+        let player = await fetch("/api/player/find", {
           method: "POST",
           headers: {
             Accept: "application/json",
@@ -36,7 +36,7 @@ class Statistics extends Component {
       }
     } else {
       let new_player_uuid = uuidv4();
-      let new_player = await fetch("http://localhost:3000/api/player", {
+      let new_player = await fetch("/api/player", {
         method: "POST",
         headers: {
           Accept: "application/json",
