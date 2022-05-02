@@ -11,6 +11,8 @@
 .dashboardContainer {
   margin: 1rem;
   width: 100%;
+  text-align: center;
+  align-items: center;
 }
 
 .horizontalTopContainer {
@@ -71,4 +73,16 @@
 
 .player_pic {
   border-radius: 10%;
+}
+
+.matchTableContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.matchTable {
+  border: solid grey 1px;
+  width: 80%;
 }

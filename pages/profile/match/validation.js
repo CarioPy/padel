@@ -26,10 +26,20 @@ export default function MatchPage() {
         <>
           <div className={styles.component_container}>
             <SideNavBar />
-            <h1>Validated</h1>
-            <Link href="/profile/match">
-              <button>New matches</button>
-            </Link>
+            <div className={styles.main}>
+              <Image
+                src="/validation_icon.png"
+                width={200}
+                height={200}
+              ></Image>
+              <h1>Match is registered</h1>
+              <h4 className={styles.subtitle}>
+                Validation from other players pending
+              </h4>
+              <Link href="/profile/match">
+                <button>New matches</button>
+              </Link>
+            </div>
           </div>
         </>
       )}

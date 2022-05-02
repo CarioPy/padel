@@ -116,7 +116,7 @@ class Match extends Component {
       this.decreasePlayerScore(this.state.player_2);
     }
 
-    Router.push("match/match_validated");
+    Router.push("match/validation");
   };
 
   render() {

@@ -25,17 +25,15 @@ class LeaderBoard extends Component {
           <thead className={styles.tableHead}>
             <tr className={styles.tableHeadRow}>
               <td>Player</td>
-              <td>Score</td>
-              <td>Rank</td>
+              <td className={styles.score_cells}>Score</td>
             </tr>
           </thead>
           <tbody>
             {this.state.players.map((player) => {
               return (
                 <tr key={player.name}>
-                  <td>{player.name}</td>
-                  <td>{player.score}</td>
-                  <td>{player.id}</td>
+                  <td className={styles.names_cells}>{player.name}</td>
+                  <td className={styles.score_cells}>{player.score}</td>
                 </tr>
               );
             })}

@@ -59,6 +59,10 @@
   margin-right: 20px;
 }
 
+.subtitle {
+  font-weight: 300;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;

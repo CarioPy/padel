@@ -10,6 +10,8 @@ class Statistics extends Component {
     super(props);
     this.state = {
       playerInfo: {},
+      today_date: new Date().toISOString().slice(0, 10),
+      allmatches: [],
     };
   }
 
@@ -62,8 +64,22 @@ class Statistics extends Component {
     }
   };
 
+  fetchMatch = async () => {
+    const matches = await fetch("/api/match/findall", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ pid: this.state.playerInfo.pid }),
+    });
+    const { data } = await matches.json();
+    this.setState({ allmatches: data });
+  };
+
   render() {
     this.getOrCreatePlayer();
+    this.fetchMatch();
     return (
       <>
         <h4 className={styles.title}>Statistics</h4>
@@ -83,6 +99,27 @@ class Statistics extends Component {
                 {this.state.playerInfo.score}
               </div>
             </Link>
+          </div>
+          <h4>{this.state.today_date}</h4>
+          <div className={styles.matchTableContainer}>
+            <table className={styles.matchTable}>
+              <thead>
+                <tr>
+                  <td>Match Played</td>
+                </tr>
+              </thead>
+              {this.state.allmatches.map((match) => {
+                return (
+                  <tbody key={match.mid}>
+                    <tr>
+                      <td>
+                        {match.score_teamA}:{match.score_teamB}
+                      </td>
+                    </tr>
+                  </tbody>
+                );
+              })}
+            </table>
           </div>
         </div>
       </>
