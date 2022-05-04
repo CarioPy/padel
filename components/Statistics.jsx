@@ -18,6 +18,7 @@ class Statistics extends Component {
   // Retreive player based on its name
   getOrCreatePlayer = async () => {
     const router = Router;
+    console.log(this.props.props.user);
     if (this.state.playerInfo) {
       try {
         let player = await fetch("/api/player/find", {
