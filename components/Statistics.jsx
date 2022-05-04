@@ -1,7 +1,6 @@
 import styles from "../styles/Statistics.module.css";
 import Image from "next/image";
 import React, { Component } from "react";
-import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
 import Router from "next/router";
 
@@ -14,11 +13,10 @@ class Statistics extends Component {
       allmatches: [],
     };
   }
-
+  // Need to be in GetServerSideProps ()
   // Retreive player based on its name
   getOrCreatePlayer = async () => {
     const router = Router;
-    console.log(this.props.props.user);
     if (this.state.playerInfo) {
       try {
         let player = await fetch("/api/player/find", {
@@ -34,12 +32,13 @@ class Statistics extends Component {
 
         let { data } = await player.json();
         this.setState({ playerInfo: data });
+        console.log("player_found");
       } catch (error) {
         console.log(error);
       }
     } else {
       let new_player_uuid = uuidv4();
-      let new_player = await fetch("/api/player", {
+      await fetch("/api/player", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -61,7 +60,7 @@ class Statistics extends Component {
           email: this.props.props.user.email,
         },
       });
-      router.push("/");
+      router.push("/profile/statistics/player_creation");
     }
   };
 
@@ -95,11 +94,9 @@ class Statistics extends Component {
             <div className={styles.player_name}>
               {this.state.playerInfo.name}
             </div>
-            <Link href="/profile/zero">
-              <div className={styles.player_score}>
-                {this.state.playerInfo.score}
-              </div>
-            </Link>
+            <div className={styles.player_score}>
+              {this.state.playerInfo.score}
+            </div>
           </div>
           <h4>{this.state.today_date}</h4>
           <div className={styles.matchTableContainer}>
