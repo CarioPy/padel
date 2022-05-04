@@ -33,9 +33,7 @@ export default function MatchValidationPage() {
                 height={200}
               ></Image>
               <h1>Match is Registered</h1>
-              <h4 className={styles.subtitle}>
-                Awaiting other player validation
-              </h4>
+              <h4 className={styles.subtitle}>Player contest can occur</h4>
               <Link href="/profile">
                 <button> Back to home</button>
               </Link>

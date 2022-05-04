@@ -63,6 +63,30 @@
   font-weight: 300;
 }
 
+.main_connected {
+  display: flex;
+  flex-direction: row;
+}
+
+.main_container {
+  width: 100%;
+  height: 45rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.titleProfile {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
