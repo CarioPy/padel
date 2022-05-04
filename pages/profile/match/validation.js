@@ -34,7 +34,7 @@ export default function MatchValidationPage() {
               ></Image>
               <h1>Match is Registered</h1>
               <h4 className={styles.subtitle}>Player contest can occur</h4>
-              <Link href="/profile">
+              <Link href="/profile/statistics">
                 <button> Back to home</button>
               </Link>
             </div>
