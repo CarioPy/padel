@@ -32,10 +32,12 @@ export default function MatchValidationPage() {
                 width={200}
                 height={200}
               ></Image>
-              <h1>Player is Created</h1>
-              <h4 className={styles.subtitle}>Welcome on board !</h4>
-              <Link href="/profile/match">
-                <button>Back to statistics</button>
+              <h1>Match is Registered</h1>
+              <h4 className={styles.subtitle}>
+                Awaiting other player validation
+              </h4>
+              <Link href="/profile">
+                <button> Back to home</button>
               </Link>
             </div>
           </div>

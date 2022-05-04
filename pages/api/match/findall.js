@@ -10,12 +10,12 @@ export default async (req, res) => {
       try {
         const match = await Match.find({
           $or: [
-            { player1ID: req.body.pid },
-            { player2ID: req.body.pid },
-            { player3ID: req.body.pid },
-            { player4ID: req.body.pid },
+            { player1ID: req.body.name },
+            { player2ID: req.body.name },
+            { player3ID: req.body.name },
+            { player4ID: req.body.name },
           ],
-        });
+        }).sort({ date: 1 });
         res.status(200).json({ success: true, data: match });
       } catch (error) {
         res.status(400).json({ success: false });

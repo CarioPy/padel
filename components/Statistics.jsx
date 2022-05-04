@@ -26,13 +26,12 @@ class Statistics extends Component {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            name: this.props.props.user.name,
+            email: this.props.props.user.email,
           }),
         });
 
         let { data } = await player.json();
         this.setState({ playerInfo: data });
-        console.log("player_found");
       } catch (error) {
         console.log(error);
       }
@@ -71,9 +70,9 @@ class Statistics extends Component {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ pid: this.state.playerInfo.pid }),
+      body: JSON.stringify({ name: this.state.playerInfo.name }),
     });
-    const { data } = await matches.json();
+    let { data } = await matches.json();
     this.setState({ allmatches: data });
   };
 
@@ -98,20 +97,40 @@ class Statistics extends Component {
               {this.state.playerInfo.score}
             </div>
           </div>
-          <h4>{this.state.today_date}</h4>
+          <h4>Match History</h4>
           <div className={styles.matchTableContainer}>
             <table className={styles.matchTable}>
-              <thead>
+              <thead className={styles.tableHead}>
                 <tr>
-                  <td>Match Played</td>
+                  <td>Teams</td>
+                  <td>Score</td>
+                  <td>Date</td>
+                  <td>Validation</td>
                 </tr>
               </thead>
               {this.state.allmatches.map((match) => {
                 return (
                   <tbody key={match.mid}>
                     <tr>
+                      <td className={styles.player_cells}>
+                        <p>
+                          {match.player1ID} and {match.player2ID}
+                        </p>
+                        <h3> VS </h3>
+                        <p>
+                          {match.player3ID} and {match.player4ID}
+                        </p>
+                      </td>
                       <td>
-                        {match.score_teamA}:{match.score_teamB}
+                        <h3>
+                          {match.score_teamA} : {match.score_teamB}
+                        </h3>
+                      </td>
+                      <td>{match.date.slice(0, 10)}</td>
+                      <td>
+                        <button className={styles.pendButton}>
+                          Contest Score
+                        </button>
                       </td>
                     </tr>
                   </tbody>

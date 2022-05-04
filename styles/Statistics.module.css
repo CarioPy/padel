@@ -84,5 +84,19 @@
 
 .matchTable {
   border: solid grey 1px;
-  width: 80%;
+  width: 75%;
+}
+
+.player_cells {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.tableHead {
+  color: rgb(113, 0, 255);
 }

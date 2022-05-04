@@ -8,7 +8,7 @@ export default async (req, res) => {
   switch (method) {
     case "POST":
       try {
-        const player = await Player.findOne({ email: req.body.email });
+        const player = await Player.findOne({ name: req.body.name });
         res.status(200).json({ success: true, data: player });
       } catch (error) {
         res.status(400).json({ success: false });

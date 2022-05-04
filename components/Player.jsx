@@ -17,7 +17,7 @@ class Player extends Component {
 
   research = async (e) => {
     try {
-      let players = await fetch("/api/player/find", {
+      let players = await fetch("/api/player/find_name", {
         method: "POST",
         headers: {
           Accept: "application/json",
