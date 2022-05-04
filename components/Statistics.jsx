@@ -76,6 +76,10 @@ class Statistics extends Component {
     this.setState({ allmatches: data });
   };
 
+  Alert = () => {
+    alert("In Building ;)");
+  };
+
   render() {
     this.getOrCreatePlayer();
     this.fetchMatch();
@@ -128,7 +132,10 @@ class Statistics extends Component {
                       </td>
                       <td>{match.date.slice(0, 10)}</td>
                       <td>
-                        <button className={styles.pendButton}>
+                        <button
+                          className={styles.pendButton}
+                          onClick={this.Alert}
+                        >
                           Contest Score
                         </button>
                       </td>
