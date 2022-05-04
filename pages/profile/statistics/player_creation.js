@@ -6,7 +6,7 @@ import NavBar from "../../../components/NavBar";
 import styles from "../../../styles/Home.module.css";
 import SideNavBar from "../../../components/SideNavBar";
 
-export default function MatchValidationPage() {
+export default function PlayerCreationPage() {
   const { data: session, status } = useSession();
 
   return (
@@ -32,9 +32,9 @@ export default function MatchValidationPage() {
                 width={200}
                 height={200}
               ></Image>
-              <h1>Player is Created</h1>
-              <h4 className={styles.subtitle}>Welcome on board !</h4>
-              <Link href="/profile/match">
+              <h1>Player is created !</h1>
+              <h4 className={styles.subtitle}>Welcome on board</h4>
+              <Link href="/profile/statistics">
                 <button>Back to statistics</button>
               </Link>
             </div>
